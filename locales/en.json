@@ -1,0 +1,151 @@
+{
+  "_meta": {
+    "language": "en",
+    "label": "English"
+  },
+  "app": {
+    "name": "LabIndex Shiori",
+    "tagline": "Cross-format Research Document Search",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "confirm": "Confirm"
+  },
+  "nav": {
+    "search": "Search",
+    "timeline": "Timeline",
+    "relation": "Relation Map",
+    "overlay": "Corrections",
+    "settings": "Settings"
+  },
+  "search": {
+    "placeholder": "Enter keywords...",
+    "button": "Search",
+    "results": "{count} results",
+    "no_results": "No matching documents found",
+    "fuzzy_hint": "Did you mean: {term}",
+    "filter_title": "Filters",
+    "meilisearch_not_running": "Meilisearch is not running. Please start Meilisearch before running \"python -m src.main serve\"."
+  },
+  "filter": {
+    "year": "Year",
+    "subtopic": "Sub-topic",
+    "file_type": "File Type",
+    "all_years": "All Years",
+    "all_subtopics": "All Sub-topics",
+    "all_types": "All Types"
+  },
+  "detail": {
+    "title": "Title",
+    "keywords": "Keywords",
+    "year": "Year",
+    "authors": "Authors",
+    "file_type": "Type",
+    "file_path": "Path",
+    "file_size": "Size",
+    "subtopic": "Sub-topic",
+    "abstract": "Abstract",
+    "references": "References",
+    "source_label": "Source",
+    "source_annotated": "Annotated",
+    "source_inferred": "Inferred",
+    "open_file": "Open File",
+    "open_folder": "Open Folder"
+  },
+  "timeline": {
+    "title": "Research Timeline",
+    "year_label": "{year}",
+    "document_count": "{count} documents",
+    "no_data": "No data available"
+  },
+  "lineage": {
+    "title": "Research Lineage",
+    "legend_solid": "Definite (Citation/Succession)",
+    "legend_dashed": "Candidate (Keyword/Title)",
+    "gap_years": "Gap: {n} year(s)",
+    "no_data": "No data available for lineage chart",
+    "no_researcher": "No researcher information",
+    "relation_type_citation": "Citation",
+    "relation_type_title_succession": "Research Succession (Title)",
+    "relation_type_intro_similarity": "Intro Similarity",
+    "relation_type_bibliographic_coupling": "Bibliographic Coupling",
+    "relation_type_manual": "Manual",
+    "relation_type_keyword": "Keyword Overlap",
+    "relation_type_title_similarity": "Title Similarity",
+    "confidence_certain": "Definite",
+    "confidence_candidate": "Candidate",
+    "documents": "documents",
+    "toggle_keyword": "Keyword",
+    "toggle_citation": "Citation",
+    "toggle_bibliographic_coupling": "Bibliographic Coupling",
+    "toggle_title_succession": "Title Succession",
+    "toggle_manual": "Manual",
+    "toggle_intro_similarity": "Intro Similarity",
+    "click_for_detail": "Click for details",
+    "hover_for_relation": "Hover for relation info",
+    "reset_view": "Reset View",
+    "year_sep": "–",
+    "year_from": "From",
+    "year_to": "To",
+    "note": "※ This lineage is based on M10 auto-calculation. Real data verification pending NAS recovery."
+  },
+  "relation": {
+    "title": "Related Documents",
+    "keyword_shared": "Shared Keywords",
+    "citation_chain": "Citation Chain",
+    "no_relation": "No related documents found"
+  },
+  "overlay": {
+    "title": "Correction Manager",
+    "edit_title": "Edit Title",
+    "edit_keywords": "Edit Keywords",
+    "edit_year": "Edit Year",
+    "edit_subtopic": "Change Sub-topic",
+    "add_relation": "Add Relation",
+    "delete_relation": "Delete Relation",
+    "exclude_file": "Exclude from Search",
+    "include_file": "Restore to Search",
+    "history": "Correction History",
+    "save_success": "Correction saved",
+    "save_fail": "Save failed"
+  },
+  "scanner": {
+    "title": "Scanner Status",
+    "start_scan": "Start Scan",
+    "scanning": "Scanning...",
+    "complete": "Scan Complete",
+    "files_found": "{count} files detected",
+    "files_new": "New: {count}",
+    "files_changed": "Changed: {count}",
+    "files_deleted": "Deleted: {count}",
+    "files_error": "Errors: {count}",
+    "incremental": "Incremental Scan",
+    "full_scan": "Full Scan"
+  },
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "back": "Back",
+    "next": "Next",
+    "done": "Done",
+    "edit": "Edit",
+    "view": "View",
+    "hide": "Hide",
+    "show": "Show",
+    "search_or_type": "Search or type..."
+  },
+  "file_types": {
+    "pdf": "PDF Document",
+    "docx": "Word Document",
+    "xlsx": "Excel Worksheet",
+    "dwg": "DWG Drawing",
+    "dxf": "DXF Drawing",
+    "vwx": "Vectorworks Drawing",
+    "other": "Other"
+  }
+}

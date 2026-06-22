@@ -1,0 +1,18 @@
+# LabIndex Shiori — 依赖清单
+# 使用: pip install -r requirements.txt
+
+# === 核心 ===
+pyyaml>=6.0
+meilisearch>=1.0
+
+# === 文档解析 ===
+PyMuPDF>=1.23          # PDF 解析 (fitz)
+python-docx>=1.1       # .docx 解析
+openpyxl>=3.1          # .xlsx 解析（M7 停用，代码保留参考）
+python-pptx>=0.6       # .pptx 解析（M7 新增）
+
+# === Web UI ===
+flask>=3.0             # 轻量 Web 框架
+
+# === 工具 ===
+python-magic>=0.4      # 文件类型检测（可选）

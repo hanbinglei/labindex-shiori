@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "labindex-shiori"
+version = "0.1.0"
+description = "松尾研究室 研究资料横断检索系统"
+requires-python = ">=3.11"
+authors = [
+    {name = "Han_Jingpeng"},
+]
+dependencies = [
+    "pyyaml>=6.0",
+    "meilisearch>=1.0",
+    "PyMuPDF>=1.23",
+    "python-docx>=1.1",
+    "openpyxl>=3.1",
+    "flask>=3.0",
+    "python-magic>=0.4",
+]
+
+[project.scripts]
+labindex-shiori = "src.main:main"

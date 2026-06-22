@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project runtime
+*.db
+*.sqlite3
+logs/
+data/
+
+# Meilisearch (可随时从 SQLite 重建)
+data.ms/
+
+# Meilisearch binary (128MB)
+meilisearch.exe
+
+# Config override (local overrides not tracked)
+config.local.yaml
+
+# Main config (contains NAS paths and Meilisearch master key)
+config.yaml
+
+# Environment
+.env

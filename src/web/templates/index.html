@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja" data-lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="app.name">LabIndex Shiori</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div id="app">
+  <!-- ===== ヘッダー ===== -->
+  <header id="header">
+    <div class="header-left">
+      <h1 class="logo" data-i18n="app.name">LabIndex Shiori</h1>
+      <span class="tagline" data-i18n="app.tagline">研究資料横断検索</span>
+    </div>
+    <div class="header-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ja">JA</button>
+        <button class="lang-btn" data-lang="zh">CN</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main id="main">
+    <!-- 検索 -->
+    <section id="search-section">
+      <div class="search-row">
+        <input type="text" id="search-input" placeholder="" data-i18n-placeholder="search.placeholder">
+        <button id="search-btn" data-i18n="search.button">検索</button>
+      </div>
+      <div class="filter-row">
+        <select id="filter-year"><option value="" data-i18n="filter.all_years">すべての年度</option></select>
+        <select id="filter-subtopic"><option value="" data-i18n="filter.all_subtopics">すべてのサブテーマ</option></select>
+        <select id="filter-type"><option value="" data-i18n="filter.all_types">すべての形式</option></select>
+      </div>
+    </section>
+
+    <!-- 結果 -->
+    <section id="results-section">
+      <div id="results-info" class="results-info"></div>
+      <div id="results-list" class="results-list"></div>
+      <div id="pagination" class="pagination"></div>
+    </section>
+
+    <!-- 詳細パネル -->
+    <aside id="detail-panel" class="detail-panel hidden">
+      <div class="detail-header">
+        <h2 id="detail-title"></h2>
+        <button id="detail-close" class="close-btn">&times;</button>
+      </div>
+      <div id="detail-body" class="detail-body"></div>
+    </aside>
+
+    <!-- M11: 研究系譜図 -->
+    <section id="lineage-section">
+      <h2 class="section-title">
+        <span data-i18n="lineage.title">研究系譜図</span>
+        <span class="lineage-legend">
+          <span class="legend-solid"><span class="legend-line solid"></span> <span data-i18n="lineage.legend_solid">決定(引用/継承)</span></span>
+          <span class="legend-dashed"><span class="legend-line dashed"></span> <span data-i18n="lineage.legend_dashed">候補(序論)</span></span>
+          <span class="toggle-group" id="lineage-toggles">
+            <label class="layer-toggle" data-type="citation">
+              <input type="checkbox" checked> <span data-i18n="lineage.toggle_citation">引用</span>
+            </label>
+            <label class="layer-toggle" data-type="bibliographic_coupling">
+              <input type="checkbox" checked> <span data-i18n="lineage.toggle_bibliographic_coupling">書目結合</span>
+            </label>
+            <label class="layer-toggle" data-type="title_succession">
+              <input type="checkbox" checked> <span data-i18n="lineage.toggle_title_succession">研究継承</span>
+            </label>
+            <label class="layer-toggle" data-type="manual">
+              <input type="checkbox" checked> <span data-i18n="lineage.toggle_manual">手動</span>
+            </label>
+            <label class="layer-toggle" data-type="intro_similarity">
+              <input type="checkbox" checked> <span data-i18n="lineage.toggle_intro_similarity">序論類似</span>
+            </label>
+            <label class="layer-toggle" data-type="keyword">
+              <input type="checkbox"> <span data-i18n="lineage.toggle_keyword">キーワード</span>
+            </label>
+          </span>
+          <button id="lineage-edit-btn" class="lineage-edit-btn">Edit</button>
+        </span>
+        <span class="lineage-controls">
+          <select id="lineage-year-start" class="lineage-year-select"></select>
+          <span class="year-sep" data-i18n="lineage.year_sep">～</span>
+          <select id="lineage-year-end" class="lineage-year-select"></select>
+          <button id="lineage-reset-view" class="lineage-control-btn" data-i18n="lineage.reset_view">全体表示</button>
+        </span>
+      </h2>
+      <div id="lineage-chart" class="lineage-chart">
+        <div class="loading" data-i18n="app.loading">読み込み中...</div>
+      </div>
+      <div id="lineage-note" class="lineage-note" data-i18n="lineage.note">※ この系譜図はM10の自動推算に基づきます。</div>
+      <!-- ツールチップ -->
+      <div id="lineage-tooltip" class="lineage-tooltip hidden"></div>
+    </section>
+  </main>
+
+  <!-- ===== ステータスバー ===== -->
+  <footer id="status-bar">
+    <span id="status-msg" data-i18n="app.loading">読み込み中...</span>
+  </footer>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>

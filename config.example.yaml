@@ -1,0 +1,189 @@
+# ============================================================
+# LabIndex Shiori — Configuration Template
+# ============================================================
+# Copy this file to config.yaml and fill in your values.
+#   cp config.example.yaml config.yaml
+#
+# config.yaml is gitignored — it will not be committed.
+# ============================================================
+
+# Directory(s) to scan — supports UNC network paths.
+SCAN_ROOTS:
+  - \\YOUR_NAS_SERVER\Path\to\research\papers
+
+database:
+  path: data/labindex.db
+
+i18n:
+  default_language: ja  # ja / zh / en
+  locales_dir: locales
+
+meilisearch:
+  # Generate a random 40-character hex key:
+  #   openssl rand -hex 20
+  api_key: CHANGE_ME_TO_YOUR_MEILI_MASTER_KEY
+  host: http://127.0.0.1
+  index_name: labindex_shiori
+  port: 7700
+
+parser:
+  pdf_max_pages: 200
+  pptx_max_slides: 200
+  timeout_per_file: 30
+
+path_parsing:
+  academic_year:
+    graduation_month: 3
+    pattern: ^(\d{4})(\d{2})_
+  degree:
+    ignore_prefix: "^[①②③④⑤⑥⑦⑧⑨⑩]+"
+    mapping:
+      bachelor thesis: B
+      doctoral thesis: D
+      master thesis: M
+      修士論文: M
+      修論: M
+      卒業論文: B
+      卒論: B
+      博士論文: D
+      博論: D
+  doc_type:
+    ignore_prefix: "^[①②③④⑤⑥⑦⑧⑨⑩]+"
+    mapping:
+      gaiyou: summary
+      honron: thesis
+      presentation: presentation
+      公聴会: presentation
+      実験データ: experiment_data
+      本論: thesis
+      梗概: summary
+      解析データ: analysis_data
+  researcher:
+    normalize:
+      trim: true
+      unify_whitespace: true
+    offset: 1
+    position_relative_to: doc_type
+
+relation:
+  bibliographic_coupling:
+    certain_threshold: 2
+    enabled: true
+    min_shared_refs: 2
+    reference_normalization:
+      strip_prefixes:
+        - ^\[\d+\]\s*
+        - ^\d+\.\d+\)\s*
+        - ^\d+\)\s*
+        - ^\d+\.\s*
+      year_pattern: \b(19\d{2}|20\d{2})\b
+  citation_min_title_match_len: 10
+  citation_title_similarity_threshold: 0.6
+  title_similarity_enabled: false
+  intro_similarity:
+    enabled: true
+    max_chars: 1000
+    min_chars: 50
+    n_gram_range:
+      - 1
+      - 3
+    threshold: 0.3
+  keyword_overlap_threshold: 0.5
+  predecessor_patterns:
+    - '(その1|その一)'
+    - '(第1報|第一報|第１報)'
+    - '(第1報|第一報|第１報)'
+    - '続報'
+    - '(続報)'
+    - '続き'
+  succession_patterns:
+    - '(その[2-9])'
+    - '(第[2-9]報)'
+    - '(第\d{2}報)'
+    - '続報'
+    - '(続報)'
+    - '続き'
+  title_similarity_threshold: 0.5
+
+scanner:
+  exclude_dirs:
+    - __pycache__
+    - .git
+    - .svn
+    - '@Recycle'
+    - '@Recently-Snapshot'
+  skip_data_dir_patterns:
+    - 解析データ
+    - 実験データ
+  stable_threshold_sec: 60
+  supported_extensions:
+    - .pdf
+    - .docx
+    - .pptx
+  top_level_year_pattern: ^\d{6}_
+
+topics:
+  - name: CFT
+    display_name_en: CFT
+    display_name_ja: CFT
+    display_name_zh: CFT
+    subtopics:
+      - name: grout_filling
+        display_name_en: Grout Filling
+        display_name_ja: グラウト充填
+        display_name_zh: 灌浆填充
+        keywords:
+          - グラウト
+          - grout
+          - 充填
+          - infill
+          - filling
+          - モルタル
+          - mortar
+      - name: loading_test
+        display_name_en: Loading Test
+        display_name_ja: 載荷実験
+        display_name_zh: 加载实验
+        keywords:
+          - 載荷
+          - loading
+          - 実験
+          - experiment
+          - 試験
+          - test
+          - 繰り返し
+          - cyclic
+          - 曲げ
+          - bending
+          - せん断
+          - shear
+      - name: fem_analysis
+        display_name_en: FEM Analysis
+        display_name_ja: FEM解析
+        display_name_zh: FEM分析
+        keywords:
+          - FEM
+          - 有限要素
+          - finite element
+          - Marc
+          - 数値解析
+          - 解析モデル
+          - simulation
+      - name: joint_connection
+        display_name_en: Joint / Connection
+        display_name_ja: 接合部・継手
+        display_name_zh: 节点・接头
+        keywords:
+          - 接合
+          - joint
+          - 継手
+          - splice
+          - connection
+          - 高力ボルト
+          - bolt
+          - 摩擦接合
+
+unclassified:
+  en: Unclassified
+  ja: 未分類
+  zh: 未分類

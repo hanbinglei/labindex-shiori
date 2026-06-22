@@ -1,5 +1,8 @@
 # LabIndex Shiori
 
+[![English](https://img.shields.io/badge/README-English-green)](README.md)
+[![中文](https://img.shields.io/badge/README-中文-red)](README.zh.md)
+
 > 研究室ドキュメント索引・研究系譜可視化システム — Meilisearch 全文検索 + 研究者系譜図連携
 
 **LabIndex Shiori** は、セルフホスト・ローカルファーストの研究室ドキュメント管理システムです。共有 NAS 上の論文、学位論文、実験データをインデックス化し、Meilisearch による全文検索を提供します。さらに、**研究系譜**を自動的に発見し、研究テーマや技術がどのように先輩から後輩へ継承されていくかを可視化します。

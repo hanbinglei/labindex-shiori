@@ -1,5 +1,8 @@
 # LabIndex Shiori
 
+[![中文](https://img.shields.io/badge/README-中文-red)](README.zh.md)
+[![日本語](https://img.shields.io/badge/README-日本語-blue)](README.ja.md)
+
 > Lab document indexing and research lineage visualization system — Full-text search with Meilisearch + researcher genealogy graph.
 
 **LabIndex Shiori** is a self-hosted, local-first document management system for academic research labs. It indexes papers, theses, and experimental data from shared network drives, provides full-text search via Meilisearch, and automatically discovers **research lineage** — visualizing how research topics and techniques are passed down between successive students and researchers.
